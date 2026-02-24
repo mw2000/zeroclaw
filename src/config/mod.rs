@@ -19,6 +19,7 @@ pub use schema::{
     WebSearchConfig, WebhookConfig,
 };
 
+#[allow(clippy::ref_option)]
 pub fn name_and_presence<T: traits::ChannelConfig>(channel: &Option<T>) -> (&'static str, bool) {
     (T::name(), channel.is_some())
 }
